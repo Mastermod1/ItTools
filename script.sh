@@ -13,4 +13,8 @@ elif [[ "$1" == "--logs" ]]; then
 		date >> "log$i.txt"
 		i=$(($i+1))
 	done
+elif [[ "$1" == "--help" ]]; then
+	echo "===Super script 3000==="
+	echo "  --date -> Shows date"
+	echo "  --logs N -> Creates N files named logN.txt with name of script and date inside"
 fi

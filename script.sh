@@ -1,7 +1,7 @@
 #!/bin/bash
-if [[ "$1" == "--date" ]]; then
+if [[ "$1" == "--date" || "$1" == "-d" ]]; then
 	date
-elif [[ "$1" == "--logs" ]]; then
+elif [[ "$1" == "--logs" || "$1" == "-l" ]]; then
 	declare -i logsNumber=100
 	if [[ -n "$2" ]]; then
 		logsNumber=$2
@@ -13,8 +13,9 @@ elif [[ "$1" == "--logs" ]]; then
 		date >> "log$i.txt"
 		i=$(($i+1))
 	done
-elif [[ "$1" == "--help" ]]; then
+elif [[ "$1" == "--help" || "$1" == "-h" ]]; then
 	echo "===Super script 3000==="
-	echo "  --date -> Shows date"
-	echo "  --logs N -> Creates N files named logN.txt with name of script and date inside"
+	echo "  --help   | -h"
+	echo "  --date   | -d -> Shows date"
+	echo "  --logs N | -l N -> Creates N files named logN.txt with name of script and date inside"
 fi
